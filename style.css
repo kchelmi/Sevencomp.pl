@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  height: 100vh;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  height: 10vh;
+  color: white;
+  align-items: center;
+}
+
+#logo {
+  grid-column: 2/3;
+  padding-top: 60px;
+}
+
+.hero__main {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  height: 60%;
+  width: 100%;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  font-size: 50px;
+  transform: translate(-20%, -70%);
+  color: white;
+  z-index: 3;
+}
+
+.hero::after {
+  content: '';
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.3;
+}
+
+.part1 {
+  max-width: 60vw;
+  margin: 5vh auto;
+  text-align: center;
+  line-height: 200%;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper__img1 {
+  width: 400px;
+  height: auto;
+  margin-right: 100px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.item img {
+  padding: 10px;
+}
+
+.item_main {
+  align-self: center;
+  padding-left: 30px;
+}
+
+article {
+  max-width: 60vw;
+  margin: 0 auto;
+  line-height: 200%;
+  padding: 10px 0;
+}
+
+article p span {
+  font-size: 18px;
+  color: red;
+  font-weight: bolder;
+}
+
+h2 {
+  text-align: center;
+  margin: 10vh;
+}
+
+.container-contact {
+  width: 25vw;
+  margin: 15vh auto;
+}
+
+.form-group {
+  margin: 1em 0;
+  transition: all .3s;
+}
+
+.form-label {
+  font-size: 1em;
+  display: block;
+  opacity: 1;
+  transform: translateY(-1.25em);
+  transform-origin: 0 0;
+  transition: all .3s;
+  color: #333;
+}
+
+.form-control {
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0px;
+  border-color: #333;
+  border-style: none none solid none;
+  width: 100%;
+  transition: all .5s;
+  color: #333;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: red;
+}
+
+.form-group:focus-within {
+  transform: scale(1, 1);
+}
+
+.form-control:focus+.form-label,
+.form-control:not(:placeholder-shown)+.form-label {
+  transform: translateY(-2.5em) scale(0.8);
+}
+
+#msg {
+  font-size: 1rem;
+}
+
+#msg::placeholder {
+  color: #333;
+  opacity: 0.5;
+}
+
+.btn-contact-1 {
+  width: 100%;
+  background-color: #333;
+  transition: all .2s ease-in-out;
+  color: #333;
+  cursor: pointer;
+  border-style: none;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s linear;
+  border-radius: 7px;
+  outline: none;
+}
+
+.btn-contact-1:hover {
+  background-color: red;
+  color: black;
+}
+
+.btn-contact-1:active {
+  transform: scale(0.9);
+}
+
+footer {
+  height: 10vh;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  text-align: center;
+}
+
+footer p {
+  line-height: 5vh;
+}
+
+@media screen and (max-width: 1200px){
+  .headline {
+    font-size: 30px;
+    top: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    margin-top: 5vh;
+  }
+
+  #logo {
+    padding-top: 0;
+    text-align: center;
+
+  }
+
+  .headline {
+    font-size: 20px;
+    top: 90%;
+  }
+
+  .part1 {
+    max-width: 80vw;
+    font-size: 16px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper__img1 {
+    width: 300px;
+    margin:  3vh auto 7vh auto;
+  }
+  
+  .item_main {
+    padding-left: 10px;
+  }
+
+  article {
+    max-width: 80vw;
+    font-size: 15px;
+  }
+
+  .container-contact {
+    width: 80vw;
+  }
+
+  footer {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+}
